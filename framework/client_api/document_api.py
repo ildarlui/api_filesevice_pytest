@@ -1,6 +1,6 @@
 import requests
 
-BASE_API_URL = 'URL'
+BASE_API_URL = ''
 
 
 class APIDocument:
@@ -10,61 +10,62 @@ class APIDocument:
         response = requests.request("POST", url, data=payload, files=files)
         return response.json()
 
-    def get_document_fileservice(self, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}'
+    def get_document_fileservice(self, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}'
         response = requests.get(url)
         return response.json()
 
-    def delete_document_fileservice(self, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}'
+    def delete_document_fileservice(self, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}'
         response = requests.request("DELETE", url)
         return response.json()
 
-    def add_signature_for_document_fileservice(self, files, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/signatures'
+    def add_signature_for_document_fileservice(self, files, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/signatures'
         response = requests.request("POST", url, files=files)
         return response
 
-    def add_signature_from_files_for_document_fileservice(self, payload, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/signatures'
+    def add_signature_from_files_for_document_fileservice(self, payload, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/signatures'
         response = requests.request("POST", url, data=payload)
         return response
 
-    def delete_signature_from_files_for_document_fileservice(self, documentId, signatureId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/signatures/{signatureId}'
+    def delete_signature_from_files_for_document_fileservice(self, document_id, signature_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/signatures/{signature_id}'
         response = requests.request("DELETE", url)
         return response
 
-    def get_signature_info(self, documentId, signatureId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/signatures/{signatureId}'
+    def get_signature_info(self, document_id, signature_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/signatures/{signature_id}'
         response = requests.request("GET", url)
         return response.json()
 
     def search_document_list_fileservice(self, params):
         url = f'{BASE_API_URL}/api/documents'
-        response = requests.request("GET", url, params=params)
+        payload = {}
+        headers = {'X-Version': '1.0'}
+        response = requests.request("GET", url, params=params, headers=headers, data=payload)
         return response.json()
 
-    def add_document_attributes_fileservice(self, documentId, payload):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/attributes'
+    def add_document_attributes_fileservice(self, document_id, payload):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/attributes'
         headers = {'Content-Type': 'application/json'}
         response = requests.request("POST", url, headers=headers, data=payload)
         return response
 
-    def delete_document_attributes_fileservice(self, documentId, payload):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/attributes'
+    def delete_document_attributes_fileservice(self, document_id, payload):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/attributes'
         headers = {'Content-Type': 'application/json'}
         response = requests.request("DELETE", url, headers=headers, data=payload)
         return response
 
-
-    def get_downloads_document_fileservice(self, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/downloads'
+    def get_downloads_document_fileservice(self, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/downloads'
         response = requests.request("GET", url)
         return response
 
-    def get_url_downloads_document_fileservice(self, documentId):
-        url = f'{BASE_API_URL}/api/documents/{documentId}/urls'
+    def get_url_downloads_document_fileservice(self, document_id):
+        url = f'{BASE_API_URL}/api/documents/{document_id}/urls'
         response = requests.request("GET", url)
         return response.json()
 

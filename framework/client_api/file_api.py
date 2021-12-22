@@ -1,6 +1,6 @@
 import requests
 
-BASE_API_URL = 'URL'
+BASE_API_URL = ''
 
 
 class APIFile:
@@ -10,29 +10,29 @@ class APIFile:
         response = requests.request("POST", url, files=file)
         return response.json()
 
-    def update_expiration_date_file_fileservice(self, fileId, payload):
-        url = f"{BASE_API_URL}/api/files/{fileId}/"
+    def update_expiration_date_file_fileservice(self, file_id, payload):
+        url = f"{BASE_API_URL}/api/files/{file_id}/"
         headers = {'Content-Type': 'application/json'}
         response = requests.request("PATCH", url, headers=headers, data=payload)
         return response
 
-    def delete_file_fileservice(self, fileId):
-        url = f"{BASE_API_URL}/api/files/{fileId}"
+    def delete_file_fileservice(self, file_id):
+        url = f"{BASE_API_URL}/api/files/{file_id}"
         response = requests.request("DELETE", url)
         return response
 
-    def get_file_fileservice(self, fileIdId):
-        url = f'{BASE_API_URL}/api/files/{fileIdId}'
+    def get_file_fileservice(self, file_id):
+        url = f'{BASE_API_URL}/api/files/{file_id}'
         response = requests.get(url)
-        return response.json()
+        return response
 
-    def get_url_downloads_file_fileservice(self, fileId):
-        url = f"{BASE_API_URL}/api/files/{fileId}/urls"
+    def get_url_downloads_file_fileservice(self, file_id):
+        url = f"{BASE_API_URL}/api/files/{file_id}/urls"
         response = requests.request("GET", url)
-        return response.json()
+        return response
 
-    def get_downloads_file_fileservice(self, fileId):
-        url = f"{BASE_API_URL}/api/files/{fileId}/downloads"
+    def get_downloads_file_fileservice(self, file_id):
+        url = f"{BASE_API_URL}/api/files/{file_id}/downloads"
         response = requests.request("GET", url)
         return response
 

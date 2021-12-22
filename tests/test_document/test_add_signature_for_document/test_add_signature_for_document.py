@@ -15,3 +15,4 @@ def test_add_signature_for_document(add_document_docx, document_api, file_genera
 
     assert signature_info['data']['id'] == signature_id
     assert signature_info['data']['documentId'] == add_document_docx['data']
+

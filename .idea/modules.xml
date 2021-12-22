@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/api_filesevice_tests_pytest.iml" filepath="$PROJECT_DIR$/.idea/api_filesevice_tests_pytest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/aq-file-service-tests.iml" filepath="$PROJECT_DIR$/.idea/aq-file-service-tests.iml" />
     </modules>
   </component>
 </project>

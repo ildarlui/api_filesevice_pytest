@@ -1,6 +1,6 @@
 import requests
 
-BASE_API_URL = 'URL'
+BASE_API_URL = ''
 
 
 class APITemplate:
@@ -24,7 +24,7 @@ class APITemplate:
     def get_templates_list_fileservice(self, params):
         url = f'{BASE_API_URL}/api/templates'
         response = requests.request("GET", url, params=params)
-        return response
+        return response.json()
 
     def get_downloads_template_from_fileservice(self, templateId):
         url = f'{BASE_API_URL}/api/templates/{templateId}/downloads'
@@ -34,7 +34,7 @@ class APITemplate:
     def get_url_downloads_template_from_fileservice(self, templateId):
         url = f'{BASE_API_URL}/api/templates/{templateId}/urls'
         response = requests.request("GET", url)
-        return response.json()
+        return response
 
     def downloads_nginx(self, data):
         url = f"http://172.21.28.6:9000{data}"

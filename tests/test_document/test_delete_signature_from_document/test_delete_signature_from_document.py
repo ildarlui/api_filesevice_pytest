@@ -5,6 +5,7 @@ from tests.conftest import ADD_DOCUMENT_ID
 
 @pytest.mark.testrail_id(2457464)
 def test_delete_signature_from_document(add_document_docx, file_api, document_api, file_generator):
+    """"Проверяем что подпись удаляется из документа"""
     file = file_generator.get_file_signature_sig()
     file_id = file_api.add_file_fileservice(file)['data']
     payload = {'signatureFileId': f'{file_id}'}
