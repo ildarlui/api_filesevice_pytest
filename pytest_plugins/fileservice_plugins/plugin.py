@@ -3,12 +3,9 @@ import pytest
 from framework.client_api.document_api import APIDocument
 from framework.client_api.file_api import APIFile
 from framework.client_api.template_api import APITemplate
-from framework.generators.document_data_object import FileServiceDocumentDTO
 from framework.generators.data_generator import DocumentDataGenerator, FileDateGenerator, \
     TemplateDataGenerator
 from framework.generators.file_generator import FileGenerator
-
-
 
 
 @pytest.fixture(scope="module", name="file_generator")
@@ -83,4 +80,3 @@ def add_template(file_generator, template_payload_generator, template_api):
     payload = template_payload_generator.generator_payload_template_for_fileservice()
     template_docx = template_api.add_template_for_fileservice(payload, file)
     return template_docx
-

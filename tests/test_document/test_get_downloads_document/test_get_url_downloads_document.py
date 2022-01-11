@@ -12,4 +12,3 @@ def test_get_url_downloads_document(add_document_docx, document_api):
     ADD_DOCUMENT_ID.add(add_document_docx['data'])
 
     assert downloads_document.status_code == 200
-

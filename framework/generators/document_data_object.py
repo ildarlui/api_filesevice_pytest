@@ -11,15 +11,9 @@ class FileServiceDocumentDTO:
         self.hasAttachedSign = has_attached_sign
         self.signatureId = signature_id
 
-# class FileServiceFileExpirationDTO:
-#     def __init__(self, expiration_date=None):
-#         self.expirationDate = expiration_date
-
 
 class FileServiceTemplateDTO:
     def __init__(self, bucket=None, entity_type=None, entity_area=None):
         self.bucket = bucket
         self.entityType = entity_type
         self.entityArea = entity_area
-
-

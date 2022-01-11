@@ -10,7 +10,6 @@ class APITemplate:
         response = requests.request("POST", url, data=payload, files=file)
         return response.json()
 
-
     def get_template_from_fileservice(self, templateId):
         url = f'{BASE_API_URL}/api/templates/{templateId}'
         response = requests.request("GET", url)

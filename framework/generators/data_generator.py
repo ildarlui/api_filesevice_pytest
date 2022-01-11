@@ -1,8 +1,8 @@
 import random
 
 from framework.generators.document_data_object import FileServiceDocumentDTO, FileServiceTemplateDTO
-from framework.generators.fileservice_constants import FileServiceBucket, FileServiceEntityType, FileServiceEntityArea, \
-    FileServiceEntityId, FileServiceExpirationDate
+from framework.generators.fileservice_constants import FileServiceBucket, FileServiceEntityType, \
+    FileServiceEntityArea, FileServiceEntityId, FileServiceExpirationDate
 
 
 class DocumentDataGenerator:
@@ -12,7 +12,8 @@ class DocumentDataGenerator:
         return payload
 
     def random_bucket(self):
-        return random.choice([FileServiceBucket.PUBLIC.value, FileServiceBucket.COMMON.value, FileServiceBucket.TEMP.value])
+        return random.choice([FileServiceBucket.PUBLIC.value,
+                              FileServiceBucket.COMMON.value, FileServiceBucket.TEMP.value])
 
     def get_random_fileservice_document(self):
         file_service_document = FileServiceDocumentDTO
@@ -51,12 +52,3 @@ class FileDateGenerator:
     def get_expersion_date(self):
         expiration_date = {'expirationDate': FileServiceExpirationDate.EXPIRATION_DATE.value}
         return expiration_date
-
-    # def generator_payload_file_for_fileservice(self):
-    #     payload = self.get_random_fileservice_file()
-    #     return payload
-    #
-    # def get_random_fileservice_file(self):
-    #     file_service_file = FileServiceFileExpirationDTO
-    #     file_service_file.expirationDate = ConstantsFileService.EXPIRATION_DATE
-    #     return file_service_file

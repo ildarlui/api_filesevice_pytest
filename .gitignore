@@ -64,8 +64,8 @@ reports/
 venv/
 allure-report/
 framework/configs/config.local.ini
-framework/generators/document.docx
-framework/generators/Image.png
-framework/generators/signature.sig
-framework/generators/template.docx
+document.docx
+Image.png
+signature.sig
+template.docx
 .gitignore

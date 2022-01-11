@@ -13,5 +13,3 @@ def test_add_document_with_signature(add_document_with_signature, document_api):
 
     assert new_document['data'] == document_info['data']['id']
     assert document_info['data']['signatureIds'] is not None
-
-

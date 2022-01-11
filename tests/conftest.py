@@ -5,8 +5,6 @@ pytest_plugins = (
     "pytest_plugins.fileservice_plugins.plugin"
 )
 
-#фикстуры для удаления документов
-
 ADD_DOCUMENT_ID = set()
 ADD_FILE_ID = set()
 ADD_TEMPLATE_ID = set()
@@ -38,5 +36,3 @@ def delete_all_created_documents(document_api, file_api, template_api, request):
 
     ADD_TEMPLATE_ID.clear()
     request.addfinalizer(delete_template_fileservice)
-
-

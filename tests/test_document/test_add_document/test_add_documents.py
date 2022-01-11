@@ -12,13 +12,3 @@ def test_add_document(add_document_docx, document_api):
     ADD_DOCUMENT_ID.add(add_document_docx['data'])
 
     assert new_document['data'] == document_info['data']['id']
-
-
-
-
-
-
-
-
-
-

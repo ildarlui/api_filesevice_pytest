@@ -19,9 +19,8 @@ class FileServiceEntityArea(Enum):
 
 
 class FileServiceEntityId(Enum):
-   TEST_ID_ONE = '9103bb2b-226b-9c6e-9649-0cd39a0d6d9a'
+    TEST_ID_ONE = '9103bb2b-226b-9c6e-9649-0cd39a0d6d9a'
 
 
 class FileServiceExpirationDate(Enum):
-   EXPIRATION_DATE = '2021-10-08T07:47:33.09'
-
+    EXPIRATION_DATE = '2021-10-08T07:47:33.09'
